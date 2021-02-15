@@ -56,4 +56,23 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+    //>>>>>>>>>>>>>>>>>>>>>>>>>>>ORDER VALUE<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    @Test
+    public void should_return_total_value_of_selected_item_get_order_value(){
+        String[] orderedItems = {"Sweet corn soup", "Vegetable lasagne"};
+        int value = restaurant.getorderedItemsValue(orderedItems);
+        assertEquals(388 , value);
+    }
+
+    @Test
+    public void should_return_zero_if_item_names_is_empty(){
+        String[] orderedItems = {};
+        int value = restaurant.getorderedItemsValue(orderedItems);
+        assertEquals(0 , value);
+    }
+
+    //<<<<<<<<<<<<<<<<<<<<<<<ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
